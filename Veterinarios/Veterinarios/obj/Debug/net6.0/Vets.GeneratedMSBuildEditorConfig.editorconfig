@@ -6,8 +6,8 @@ build_property.ProjectTypeGuids =
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
-build_property.RootNamespace = Veterinarios
-build_property.RootNamespace = Veterinarios
+build_property.RootNamespace = Vets
+build_property.RootNamespace = Vets
 build_property.ProjectDir = C:\Users\Carlos\Desktop\Ruben\Desenvolvimento Web\repos\Veterinarios\Veterinarios\Veterinarios\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
@@ -59,26 +59,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Carlos/Desktop/Ruben/Desenvolvimento Web/repos/Veterinarios/Veterinarios/Veterinarios/Views/Veterinarios/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmV0ZXJpbmFyaW9zXENyZWF0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Carlos/Desktop/Ruben/Desenvolvimento Web/repos/Veterinarios/Veterinarios/Veterinarios/Views/Veterinarios/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmV0ZXJpbmFyaW9zXERlbGV0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Carlos/Desktop/Ruben/Desenvolvimento Web/repos/Veterinarios/Veterinarios/Veterinarios/Views/Veterinarios/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmV0ZXJpbmFyaW9zXERldGFpbHMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Carlos/Desktop/Ruben/Desenvolvimento Web/repos/Veterinarios/Veterinarios/Veterinarios/Views/Veterinarios/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmV0ZXJpbmFyaW9zXEVkaXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Carlos/Desktop/Ruben/Desenvolvimento Web/repos/Veterinarios/Veterinarios/Veterinarios/Views/Veterinarios/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmV0ZXJpbmFyaW9zXEluZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Carlos/Desktop/Ruben/Desenvolvimento Web/repos/Veterinarios/Veterinarios/Veterinarios/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -89,4 +69,4 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Carlos/Desktop/Ruben/Desenvolvimento Web/repos/Veterinarios/Veterinarios/Veterinarios/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-7jvz7010yz
+build_metadata.AdditionalFiles.CssScope = b-p7vn6wgq6b

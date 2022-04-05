@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Veterinarios.Models
+namespace Vets.Models
 {
     public class Donos
     {
@@ -34,8 +34,14 @@ namespace Veterinarios.Models
         [RegularExpression("[FfMm]", ErrorMessage = "No {0} só se aceitam as letras F ou M.")]
         public string Sexo { get; set; }
         /// <summary>
+        /// Email 
+        /// </summary>
+        [EmailAddress(ErrorMessage = "Introduza um email correto, por favor.")]
+        public string Email { get; set; }
+        /// <summary>
         /// Lista dos animais do Dono
         /// </summary>
         public ICollection<Animais> ListaAnimais { get; set; }
+
     }
 }

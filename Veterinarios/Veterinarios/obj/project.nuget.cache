@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "EEbsIV61Eoxw5PYJaGMpp6PkRH8Cx1KCS0UBVTUJv5RxtWmuwK/16F4UIe3XHj5EfA9A8qH+cAr6Uxwk4PoD3A==",
+  "dgSpecHash": "yyDpS7PxW81wZi0PTonHg5QHqqYcSuOZ8rN/FbqNP08f5WY0GUQSyFmUKnjWKrLEuEET+bI2Iw5v7e77GIWFOA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Carlos\\Desktop\\Ruben\\Desenvolvimento Web\\repos\\Veterinarios\\Veterinarios\\Veterinarios\\Veterinarios.csproj",
   "expectedPackageFiles": [
@@ -41,10 +41,10 @@
     "C:\\Users\\Carlos\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.3\\microsoft.entityframeworkcore.6.0.3.nupkg.sha512",
     "C:\\Users\\Carlos\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.3\\microsoft.entityframeworkcore.abstractions.6.0.3.nupkg.sha512",
     "C:\\Users\\Carlos\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.3\\microsoft.entityframeworkcore.analyzers.6.0.3.nupkg.sha512",
-    "C:\\Users\\Carlos\\.nuget\\packages\\microsoft.entityframeworkcore.design\\6.0.2\\microsoft.entityframeworkcore.design.6.0.2.nupkg.sha512",
+    "C:\\Users\\Carlos\\.nuget\\packages\\microsoft.entityframeworkcore.design\\6.0.3\\microsoft.entityframeworkcore.design.6.0.3.nupkg.sha512",
     "C:\\Users\\Carlos\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\6.0.3\\microsoft.entityframeworkcore.relational.6.0.3.nupkg.sha512",
-    "C:\\Users\\Carlos\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\6.0.2\\microsoft.entityframeworkcore.sqlserver.6.0.2.nupkg.sha512",
-    "C:\\Users\\Carlos\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\6.0.2\\microsoft.entityframeworkcore.tools.6.0.2.nupkg.sha512",
+    "C:\\Users\\Carlos\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\6.0.3\\microsoft.entityframeworkcore.sqlserver.6.0.3.nupkg.sha512",
+    "C:\\Users\\Carlos\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\6.0.3\\microsoft.entityframeworkcore.tools.6.0.3.nupkg.sha512",
     "C:\\Users\\Carlos\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\6.0.0\\microsoft.extensions.caching.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\Carlos\\.nuget\\packages\\microsoft.extensions.caching.memory\\6.0.1\\microsoft.extensions.caching.memory.6.0.1.nupkg.sha512",
     "C:\\Users\\Carlos\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",

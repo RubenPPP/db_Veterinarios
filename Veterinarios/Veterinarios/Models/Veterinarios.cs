@@ -1,4 +1,4 @@
-﻿namespace Veterinarios.Models
+﻿namespace Vets.Models
 {
     public class Veterinarios
     {

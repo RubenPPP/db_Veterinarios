@@ -55,7 +55,7 @@ namespace Veterinarios.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,NIF,Sexo")] Donos donos)
+        public async Task<IActionResult> Create([Bind("Id,Nome,NIF,Sexo")] Vets.Models.Donos donos)
         {
             if (ModelState.IsValid)
             {
@@ -87,7 +87,7 @@ namespace Veterinarios.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,NIF,Sexo")] Donos donos)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,NIF,Sexo")] Vets.Models.Donos donos)
         {
             if (id != donos.Id)
             {

@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Carlos\\Desktop\\Ruben\\Desenvolvimento Web\\repos\\Veterinarios\\Veterinarios\\Veterinarios\\Veterinarios.csproj": {}
+    "C:\\Users\\Carlos\\Desktop\\Ruben\\Desenvolvimento Web\\repos\\Veterinarios\\Veterinarios\\Veterinarios\\Vets.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Carlos\\Desktop\\Ruben\\Desenvolvimento Web\\repos\\Veterinarios\\Veterinarios\\Veterinarios\\Veterinarios.csproj": {
+    "C:\\Users\\Carlos\\Desktop\\Ruben\\Desenvolvimento Web\\repos\\Veterinarios\\Veterinarios\\Veterinarios\\Vets.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Carlos\\Desktop\\Ruben\\Desenvolvimento Web\\repos\\Veterinarios\\Veterinarios\\Veterinarios\\Veterinarios.csproj",
-        "projectName": "Veterinarios",
-        "projectPath": "C:\\Users\\Carlos\\Desktop\\Ruben\\Desenvolvimento Web\\repos\\Veterinarios\\Veterinarios\\Veterinarios\\Veterinarios.csproj",
+        "projectUniqueName": "C:\\Users\\Carlos\\Desktop\\Ruben\\Desenvolvimento Web\\repos\\Veterinarios\\Veterinarios\\Veterinarios\\Vets.csproj",
+        "projectName": "Vets",
+        "projectPath": "C:\\Users\\Carlos\\Desktop\\Ruben\\Desenvolvimento Web\\repos\\Veterinarios\\Veterinarios\\Veterinarios\\Vets.csproj",
         "packagesPath": "C:\\Users\\Carlos\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Carlos\\Desktop\\Ruben\\Desenvolvimento Web\\repos\\Veterinarios\\Veterinarios\\Veterinarios\\obj\\",
         "projectStyle": "PackageReference",
