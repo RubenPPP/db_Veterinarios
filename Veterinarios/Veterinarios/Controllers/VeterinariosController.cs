@@ -14,10 +14,12 @@ namespace Veterinarios.Controllers
     public class VeterinariosController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public VeterinariosController(ApplicationDbContext context)
+        public VeterinariosController(ApplicationDbContext context, IWebHostEnvironment webHostEnvironment)
         {
             _context = context;
+            _webHostEnvironment = webHostEnvironment;
         }
 
         // GET: Veterinarios
@@ -82,7 +84,13 @@ namespace Veterinarios.Controllers
             {
                 if (fotoVet.ContentType == "image/png" || fotoVet.ContentType == "image/jpeg")
                 {
-
+                    // Definir o nome da foto
+                    Guid g = Guid.NewGuid();
+                    string nomeFoto = veterinarios.NumCedulaProf + g.ToString();
+                    string extensaoFoto = Path.GetExtension(fotoVet.FileName);
+                    nomeFoto += extensaoFoto;
+                    // Atribuir ao vet o nome da sua foto
+                    veterinarios.Fotografia = nomeFoto;
                 } else
                 {
                     // Criar mensagem de erro
@@ -92,10 +100,53 @@ namespace Veterinarios.Controllers
                     return View(veterinarios);
                 }
             }
+            // Avaliar se os dados fornecidos pelo utilizador estão de acordo com as regras do Model
             if (ModelState.IsValid)
             {
-                _context.Add(veterinarios);
-                await _context.SaveChangesAsync();
+                try
+                {
+                    // Adicionar os dados à BD
+                    _context.Add(veterinarios);
+                    // Consolidar esses dados (commit)
+                    await _context.SaveChangesAsync();
+                }
+                catch (Exception e)
+                {
+                    // É da nossa responsabilidade tratarmos da exceção!
+
+                    // Registar no disco rígido do servidor todos os dados da operação:
+                    // data + hora
+                    // nome do utilizador
+                    // nome do controller + método
+                    // dados do erro
+                    // outros dados considerados úteis
+
+                    // eventualmente, tentar guardar na (numa) base de dados os dados do erro
+                    // eventualmente, notificar o Administrador da app do erro
+
+                    // Criar msg de erro
+                    ModelState.AddModelError("", "Ocorreu um erro com a operação de guardar os dados do Veterinário " + veterinarios.Nome);
+                    // Devolver controlo à View
+                    return View(veterinarios);
+                }
+                // +++Concretizar a ação de guardar o ficheiro da foto
+                if (fotoVet != null)
+                {
+                    // Local a guardar ficheiro
+                    string nomeLocalizacaoFicheiro = _webHostEnvironment.WebRootPath;
+                    nomeLocalizacaoFicheiro = Path.Combine(nomeLocalizacaoFicheiro, "Fotos");
+                    // Avaliar se a pasta 'Fotos' existe
+                    if (!Directory.Exists(nomeLocalizacaoFicheiro))
+                        Directory.CreateDirectory(nomeLocalizacaoFicheiro);
+                    // Nome do documento a guardar
+                    string nomeDaFoto = Path.Combine(nomeLocalizacaoFicheiro, veterinarios.Fotografia);
+                    // Criar o objeto que vai manipular o ficheiro
+                    using var stream = new FileStream(nomeDaFoto, FileMode.Create);
+                    // Guardar no disco rígido
+                    fotoVet.CopyTo(stream);
+                    // ---Concretizar a ação de guardar o ficheiro da foto
+                } 
+                // Devolver o controlo da app à View
                 return RedirectToAction(nameof(Index));
             }
             return View(veterinarios);
@@ -175,9 +226,16 @@ namespace Veterinarios.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var veterinarios = await _context.Veterinarios.FindAsync(id);
-            _context.Veterinarios.Remove(veterinarios);
-            await _context.SaveChangesAsync();
+            try
+            {
+                var veterinario = await _context.Veterinarios.FindAsync(id);
+                _context.Veterinarios.Remove(veterinario);
+                await _context.SaveChangesAsync();
+                // Remover o ficheiro com a foto do Veterinário se a foto não for a 'noVet.png'
+            } catch (Exception ex)
+            {
+                // Não esquexer, tratar da exceção
+            }
             return RedirectToAction(nameof(Index));
         }
 
