@@ -234,7 +234,7 @@ namespace Veterinarios.Controllers
                 // Remover o ficheiro com a foto do Veterinário se a foto não for a 'noVet.png'
             } catch (Exception ex)
             {
-                // Não esquexer, tratar da exceção
+                // Não esquecer, tratar da exceção
             }
             return RedirectToAction(nameof(Index));
         }
