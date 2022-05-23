@@ -15,8 +15,64 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Carlos\Desktop\Ruben\Desenvolvimento Web\repos\Veterinarios\Veterinarios\Veterinarios
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Carlos/Desktop/Ruben/Desenvolvimento Web/repos/Veterinarios/Veterinarios/Veterinarios/Areas/Identity/Pages/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Carlos/Desktop/Ruben/Desenvolvimento Web/repos/Veterinarios/Veterinarios/Veterinarios/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Carlos/Desktop/Ruben/Desenvolvimento Web/repos/Veterinarios/Veterinarios/Veterinarios/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Carlos/Desktop/Ruben/Desenvolvimento Web/repos/Veterinarios/Veterinarios/Veterinarios/Areas/Identity/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Carlos/Desktop/Ruben/Desenvolvimento Web/repos/Veterinarios/Veterinarios/Veterinarios/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Carlos/Desktop/Ruben/Desenvolvimento Web/repos/Veterinarios/Veterinarios/Veterinarios/Views/Animais/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5pbWFpc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Carlos/Desktop/Ruben/Desenvolvimento Web/repos/Veterinarios/Veterinarios/Veterinarios/Views/Animais/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5pbWFpc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Carlos/Desktop/Ruben/Desenvolvimento Web/repos/Veterinarios/Veterinarios/Veterinarios/Views/Animais/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5pbWFpc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Carlos/Desktop/Ruben/Desenvolvimento Web/repos/Veterinarios/Veterinarios/Veterinarios/Views/Animais/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5pbWFpc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Carlos/Desktop/Ruben/Desenvolvimento Web/repos/Veterinarios/Veterinarios/Veterinarios/Views/Animais/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5pbWFpc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Carlos/Desktop/Ruben/Desenvolvimento Web/repos/Veterinarios/Veterinarios/Veterinarios/Views/Consultas/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uc3VsdGFzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Carlos/Desktop/Ruben/Desenvolvimento Web/repos/Veterinarios/Veterinarios/Veterinarios/Views/Consultas/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uc3VsdGFzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Carlos/Desktop/Ruben/Desenvolvimento Web/repos/Veterinarios/Veterinarios/Veterinarios/Views/Consultas/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uc3VsdGFzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Carlos/Desktop/Ruben/Desenvolvimento Web/repos/Veterinarios/Veterinarios/Veterinarios/Views/Consultas/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uc3VsdGFzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Carlos/Desktop/Ruben/Desenvolvimento Web/repos/Veterinarios/Veterinarios/Veterinarios/Views/Consultas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uc3VsdGFzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Carlos/Desktop/Ruben/Desenvolvimento Web/repos/Veterinarios/Veterinarios/Veterinarios/Views/Donos/Create.cshtml]

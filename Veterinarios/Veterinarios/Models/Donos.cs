@@ -43,5 +43,10 @@ namespace Vets.Models
         /// </summary>
         public ICollection<Animais> ListaAnimais { get; set; }
 
+        /// <summary>
+        /// Atributo para executar a FK que permitirá ligar a tabela da
+        /// autenticação à tabela de donos
+        /// </summary>
+        public string UserID { get; set; }
     }
 }

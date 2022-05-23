@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +12,7 @@ using Vets.Models;
 
 namespace Veterinarios.Controllers
 {
+    [Authorize]
     public class VeterinariosController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -155,17 +157,34 @@ namespace Veterinarios.Controllers
         // GET: Veterinarios/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            /* 
+             * Só se altera a foto do Vet, se for carregado
+             * algum ficheiro, e mesmo assim, só se for
+             * uma imagem
+             * 
+             * Se há uma nova imagem, qual o seu nome?
+             * Vamos manter o nome da foto antiga ou dar um novo?
+             * Se mantiver, pode haver problemas com a cache do browser
+             * Se for novo, tenho de apahar o ficheiro antigo
+             *  Se não for o 'noVet.png'
+             */
             if (id == null)
             {
-                return NotFound();
+                return RedirectToAction("Index");
             }
 
-            var veterinarios = await _context.Veterinarios.FindAsync(id);
-            if (veterinarios == null)
+            var veterinario = await _context.Veterinarios.FindAsync(id);
+            if (veterinario == null)
             {
-                return NotFound();
+                return RedirectToAction("Index");
             }
-            return View(veterinarios);
+
+            // Preservar, para memória futura, os dados que não devem ser adulterados pelo utilizador no browser
+            // Vamos usar 'variáveis de sessão'
+            // Podemos guardar INT e STRING
+            // Quero guardar o ID do médico veterinário
+            HttpContext.Session.SetInt32("VetID", (int) id);
+            return View(veterinario);
         }
 
         // POST: Veterinarios/Edit/5
@@ -173,23 +192,46 @@ namespace Veterinarios.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,NumCedulaProf,Fotografia")] Vets.Models.Veterinarios veterinarios)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,NumCedulaProf,Fotografia")] Vets.Models.Veterinarios veterinario)
         {
-            if (id != veterinarios.Id)
+            if (id != veterinario.Id)
             {
                 return NotFound();
             }
 
+            /* Confirmar se não houve adulteração de dados no browser
+             * para que isto aconteça:
+             * - Recuperar o valor da varíavel de sessão
+             * - Comparar este valor com os dados que chegam do browser
+             * - Se forem diferentes, temos um problema...
+             */
+
+            var idMedicoVeterinario = HttpContext.Session.GetInt32("VetID");
+            // Se a variável 'idMedicoVeterinario' for nula, o que aconteceu?
+            // Houve injeção de dados através de uma ferramenta externa
+            // Demorou-se demasiado tempo na execução da tarefa
+            if (idMedicoVeterinario == null)
+            {
+                ModelState.AddModelError("", "Demorou demasiado tempo a executar a tarefa de edição");
+                return View(veterinario);
+            }
+
+            if (idMedicoVeterinario != veterinario.Id)
+            {
+                // Temos problemas... o que vamos fazer?
+                return RedirectToAction("Index");
+            }
+            
             if (ModelState.IsValid)
             {
                 try
                 {
-                    _context.Update(veterinarios);
+                    _context.Update(veterinario);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!VeterinariosExists(veterinarios.Id))
+                    if (!VeterinariosExists(veterinario.Id))
                     {
                         return NotFound();
                     }
@@ -200,7 +242,7 @@ namespace Veterinarios.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(veterinarios);
+            return View(veterinario);
         }
 
         // GET: Veterinarios/Delete/5

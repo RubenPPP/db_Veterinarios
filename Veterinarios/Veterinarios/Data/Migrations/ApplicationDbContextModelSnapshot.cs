@@ -17,7 +17,7 @@ namespace Veterinarios.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.3")
+                .HasAnnotation("ProductVersion", "6.0.4")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -262,6 +262,118 @@ namespace Veterinarios.Data.Migrations
                     b.HasIndex("DonoFK");
 
                     b.ToTable("Animais");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            DataNascimento = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DonoFK = 1,
+                            Especie = "Cão",
+                            Fotografia = "animal1.jpg",
+                            Nome = "Bubi",
+                            Peso = 24.0,
+                            Raca = "Pastor Alemão"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            DataNascimento = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DonoFK = 3,
+                            Especie = "Cão",
+                            Fotografia = "animal2.jpg",
+                            Nome = "Pastor",
+                            Peso = 50.0,
+                            Raca = "Serra Estrela"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            DataNascimento = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DonoFK = 2,
+                            Especie = "Cão",
+                            Fotografia = "animal3.jpg",
+                            Nome = "Tripé",
+                            Peso = 4.0,
+                            Raca = "Serra Estrela"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            DataNascimento = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DonoFK = 3,
+                            Especie = "Cavalo",
+                            Fotografia = "animal4.jpg",
+                            Nome = "Saltador",
+                            Peso = 580.0,
+                            Raca = "Lusitana"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            DataNascimento = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DonoFK = 3,
+                            Especie = "Gato",
+                            Fotografia = "animal5.jpg",
+                            Nome = "Tareco",
+                            Peso = 1.0,
+                            Raca = "siamês"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            DataNascimento = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DonoFK = 2,
+                            Especie = "Cão",
+                            Fotografia = "animal6.jpg",
+                            Nome = "Cusca",
+                            Peso = 45.0,
+                            Raca = "Labrador"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            DataNascimento = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DonoFK = 4,
+                            Especie = "Cão",
+                            Fotografia = "animal7.jpg",
+                            Nome = "Morde Tudo",
+                            Peso = 39.0,
+                            Raca = "Dobermann"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            DataNascimento = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DonoFK = 2,
+                            Especie = "Cão",
+                            Fotografia = "animal8.jpg",
+                            Nome = "Forte",
+                            Peso = 20.0,
+                            Raca = "Rottweiler"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            DataNascimento = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DonoFK = 3,
+                            Especie = "Vaca",
+                            Fotografia = "animal9.jpg",
+                            Nome = "Castanho",
+                            Peso = 652.0,
+                            Raca = "Mirandesa"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            DataNascimento = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DonoFK = 1,
+                            Especie = "Gato",
+                            Fotografia = "animal10.jpg",
+                            Nome = "Saltitão",
+                            Peso = 2.0,
+                            Raca = "Persa"
+                        });
                 });
 
             modelBuilder.Entity("Vets.Models.Consultas", b =>
@@ -306,7 +418,6 @@ namespace Veterinarios.Data.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NIF")
@@ -327,6 +438,36 @@ namespace Veterinarios.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Donos");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            NIF = "813635582",
+                            Nome = "Luís Freitas",
+                            Sexo = "M"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            NIF = "854613462",
+                            Nome = "Andreia Gomes",
+                            Sexo = "F"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            NIF = "265368715",
+                            Nome = "Cristina Sousa",
+                            Sexo = "F"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            NIF = "835623190",
+                            Nome = "Sónia Rosa",
+                            Sexo = "F"
+                        });
                 });
 
             modelBuilder.Entity("Vets.Models.Veterinarios", b =>

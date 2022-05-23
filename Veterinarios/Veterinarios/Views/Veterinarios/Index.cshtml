@@ -6,9 +6,12 @@
 
 <h1>Lista dos Veterinários da Clínica</h1>
 
-<p>
-    <a asp-action="Create">Adicionar Veterinário</a>
-</p>
+@if (User.Identity.IsAuthenticated)
+{
+    <p>
+        <a asp-action="Create">Adicionar Veterinário</a>
+    </p>
+}
 <table class="table">
     <thead>
         <tr>
@@ -25,32 +28,38 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-    @*  A palavra 'Model' é uma palavra reservada.
-        Representa o conjunto de dados recebidos dentro da View
-    *@
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-                @*  HTML Helper
-                    Este mostra o conteúdo do atributo
-                *@
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NumCedulaProf)
-            </td>
-            <td>
-                @*Html.DisplayFor(modelItem => item.Fotografia)*@
-                @*Mostra a fotografia, no ecrã*@
-                <a href="~/Fotos/@item.Fotografia)" target="_blank">
-                    <img src="~/Fotos/@Html.DisplayFor(modelItem => item.Fotografia)" alt="Foto do(a) veterinário(a) @item.Nome" title="@item.Nome" height="50"/>
-                </a>
-            </td>
-            <td>
-                <a class="button" asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
-                <a class="button" asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
-                <a class="button" asp-action="Delete" asp-route-id="@item.Id">Remover</a>
-            </td>
+        @foreach (var item in Model) {
+            @*  A palavra 'Model' é uma palavra reservada.
+                Representa o conjunto de dados recebidos dentro da View
+            *@
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                    @*  HTML Helper
+                        Este mostra o conteúdo do atributo
+                    *@
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumCedulaProf)
+                </td>
+                <td>
+                    @*Html.DisplayFor(modelItem => item.Fotografia)*@
+                    @*Mostra a fotografia, no ecrã*@
+                    <a href="~/Fotos/@item.Fotografia)" target="_blank">
+                        <img src="~/Fotos/@Html.DisplayFor(modelItem => item.Fotografia)" alt="Foto do(a) veterinário(a) @item.Nome" title="@item.Nome" height="50"/>
+                    </a>
+                </td>
+                
+                <td>
+                    @if (User.Identity.IsAuthenticated) {
+                        <text>
+                            <a class="button" asp-action="Edit" asp-route-id="@item.Id">Editar</a>|
+                            <a class="button" asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                            <a class="button" asp-action="Delete" asp-route-id="@item.Id">Remover</a>
+                        </text>
+                    }
+                </td>
+                
         </tr>
 }
     </tbody>
