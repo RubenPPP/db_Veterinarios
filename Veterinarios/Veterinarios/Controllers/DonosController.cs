@@ -33,17 +33,28 @@ namespace Veterinarios.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return RedirectToAction("Index");
             }
 
-            var donos = await _context.Donos
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (donos == null)
+            /* SELECT *
+             * FROM donos d
+             * INNER JOIN Animais a
+             * ON a.DonosFK = d.Id
+             * WHERE d.id = id
+             */
+            string idUserAutenticado = _userManager.GetUserId(User);
+
+            var dono = await _context.Donos
+                .Include(d => d.ListaAnimais)
+                .Where(d => d.Id == id && d.userID = idUserAutenticado)
+                .FirstOrDefaultAsync();
+
+            if (dono == null)
             {
-                return NotFound();
+                return RedirectToAction("Index");
             }
 
-            return View(donos);
+            return View(dono);
         }
 
         // GET: Donos/Create

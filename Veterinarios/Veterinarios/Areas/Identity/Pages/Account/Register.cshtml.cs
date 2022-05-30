@@ -41,7 +41,7 @@ namespace Veterinarios.Areas.Identity.Pages.Account
             SignInManager<IdentityUser> signInManager,
             ILogger<RegisterModel> logger,
             IEmailSender emailSender,
-            ApplicationDbContext _context)
+            ApplicationDbContext context)
         {
             _userManager = userManager;
             _userStore = userStore;
@@ -49,7 +49,7 @@ namespace Veterinarios.Areas.Identity.Pages.Account
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
-            _context = _context;
+            _context = context;
         }
 
         /// <summary>
@@ -129,12 +129,12 @@ namespace Veterinarios.Areas.Identity.Pages.Account
             if (ModelState.IsValid)
             {
                 var user = CreateUser();
-
+                
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
 
                 // Atribuir o nome de batismo e a data de registo ao novo utilizador
-                //user.NomeDoUtilizador = Input.NomeDoUtilizador;
+                //user.NomeDoUtilizador = Input.Dono.Nome;
                 //user.DataRegisto = DateTime.Now;
 
                 // Cria, efetivamente, o criador
@@ -143,6 +143,9 @@ namespace Veterinarios.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
+
+                    // Associar o utilizador à role 'Cliente'
+                    await _userManager.AddToRoleAsync(user, "Cliente");
                     /* Guardar os dados do novo Dono
                      * 1 - Atribuir ao novo Dono, o email
                      * 2 -                      , o UserID

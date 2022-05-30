@@ -6,7 +6,7 @@
 
 <h1>Lista dos Veterinários da Clínica</h1>
 
-@if (User.Identity.IsAuthenticated)
+@if (User.IsInRole("Veterinario") || User.IsInRole("Administrativo"))
 {
     <p>
         <a asp-action="Create">Adicionar Veterinário</a>
@@ -51,7 +51,7 @@
                 </td>
                 
                 <td>
-                    @if (User.Identity.IsAuthenticated) {
+                    @if (User.IsInRole("Veterinario") || User.IsInRole("Administrativo")) {
                         <text>
                             <a class="button" asp-action="Edit" asp-route-id="@item.Id">Editar</a>|
                             <a class="button" asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |

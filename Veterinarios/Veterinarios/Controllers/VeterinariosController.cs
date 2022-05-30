@@ -12,7 +12,13 @@ using Vets.Models;
 
 namespace Veterinarios.Controllers
 {
-    [Authorize]
+    /*  Se quiser restringir apenas para quem é ambos Veterinário E Administrativo:
+     *  [Authorize(Roles = "Veterinario")]
+     *  [Authorize(Roles = "Administrativo")]
+     *  Enquanto que na seguinte, necessita de UMA das seguintes roles:
+     */
+    [Authorize(Roles = "Veterinario,Administrativo")]
+    
     public class VeterinariosController : Controller
     {
         private readonly ApplicationDbContext _context;

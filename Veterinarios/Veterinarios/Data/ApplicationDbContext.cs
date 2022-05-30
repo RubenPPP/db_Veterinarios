@@ -37,6 +37,14 @@ namespace Veterinarios.Data
         {
             // 'Importa' todo o comportamento do método, aquando da sua definição na SuperClasse.
             base.OnModelCreating(modelBuilder);
+
+            // Criar os perfis de utilizador da nossa app
+            modelBuilder.Entity<IdentityRole>().HasData(
+                new IdentityRole { Id = "a", Name = "Administrativo", NormalizedName = "ADMINISTRATIVO" },
+                new IdentityRole { Id = "v", Name = "Veterinario", NormalizedName = "VETERINARIO" },
+                new IdentityRole { Id = "c", Name = "Cliente", NormalizedName = "CLIENTE" }
+                );
+
             // Adicionar registos que serão adicionados às tabelas da BD
             modelBuilder.Entity<Vets.Models.Veterinarios>().HasData(
                 new Vets.Models.Veterinarios() { 
@@ -63,10 +71,10 @@ namespace Veterinarios.Data
                 });
 
             modelBuilder.Entity<Donos>().HasData(
-                new Donos { Id = 1, Nome = "Luís Freitas", Sexo = "M", NIF = "813635582" },
-                new Donos { Id = 2, Nome = "Andreia Gomes", Sexo = "F", NIF = "854613462" },
-                new Donos { Id = 3, Nome = "Cristina Sousa", Sexo = "F", NIF = "265368715" },
-                new Donos { Id = 4, Nome = "Sónia Rosa", Sexo = "F", NIF = "835623190" }
+                new Donos { Id = 1, Nome = "Luís Freitas", Sexo = "M", NIF = "813635582", Email = "lfreitas@gmail.com" },
+                new Donos { Id = 2, Nome = "Andreia Gomes", Sexo = "F", NIF = "854613462", Email = "agomes@gmail.com" },
+                new Donos { Id = 3, Nome = "Cristina Sousa", Sexo = "F", NIF = "265368715", Email = "csousa33@gmail.com" },
+                new Donos { Id = 4, Nome = "Sónia Rosa", Sexo = "F", NIF = "835623190", Email = "srosaa@gmail.com" }
             );
 
             modelBuilder.Entity<Animais>().HasData(

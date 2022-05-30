@@ -36,6 +36,7 @@ namespace Vets.Models
         /// <summary>
         /// Email 
         /// </summary>
+        [Required(ErrorMessage = "O {0} é de preenchimento obrigatório!")]
         [EmailAddress(ErrorMessage = "Introduza um email correto, por favor.")]
         public string Email { get; set; }
         /// <summary>
